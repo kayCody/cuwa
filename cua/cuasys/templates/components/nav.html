@@ -1,0 +1,22 @@
+{% load static %}
+<div>
+  <div class="bg-blue-400 w-full h-2"></div>
+  <div class="p-2 border-b bg-white">
+    <div class="flex justify-between items-center">
+      <div class="">
+        <a href="{% url 'dashboard' %}">
+          <img src="{% static 'image/logo_black.png'%}" width="120px" alt="cua_logo_here">
+        </a>
+      </div>
+      <div class='notification flex gap-x-5'>
+        <a href="{% url 'notification' %}" class="text-gray-700 hover:text-blue-900 text-[25px]"><ion-icon
+            name="notifications-sharp" width="100"></ion-icon></a>
+        <button onClick=""class="text-gray-700 hover:text-blue-900 lg:hidden text-[25px]"><ion-icon
+            name="menu-sharp" width="100"></ion-icon></button>
+        <a href="#" class="text-red-700 hover:text-red-900 text-[25px] hidden lg:block"><ion-icon
+            name="exit-outline" width="100"></ion-icon></a>
+      </div>
+    </div>
+  </div>
+  {% include 'components/navmodal.html' %}
+</div>

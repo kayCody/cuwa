@@ -1,0 +1,33 @@
+{% load static %}
+<div>
+  <table>
+    <thead>
+      <tr class="text-center font-bold text-sm text-white bg-gray-800 ">
+        <th scope="col" class="head-rows">No.</th>
+        <th scope="col" class="head-rows">ID No.</th>
+        <th scope="col" class="head-rows">Accounts No.</th>
+        <th scope="col" class="head-rows">Last Name</th>
+        <th scope="col" class="head-rows">Middle Name</th>
+        <th scope="col" class="head-rows">First name</th>
+        <th scope="col" class="head-rows">D.O.B</th>
+        <th scope="col" class="head-rows">Mobile</th>
+      </tr>
+    </thead>
+    <tbody className='bg-gray-200'>
+      {% for customer in customers %}
+      <tr class="text-center text-sm text-gray-900 font-light  py-4">
+        <td class="whitespace-nowrap px-6 actual-rows">{{customer.id}}</td>
+        <td class="whitespace-nowrap px-6 actual-rows text-blue-600 hover:text-blue-800 font-bold">
+          <a href="{% url 'customer' customer.idNo %}">{{customer.idNo}}</a>
+        </td>
+        <td class="whitespace-nowrap px-6 actual-rows">{{customer.accountNo}}</td>
+        <td class="whitespace-nowrap px-6 actual-rows">{{customer.name}}</td>
+        <td class="whitespace-nowrap px-6 actual-rows"></td>
+        <td class="whitespace-nowrap px-6 actual-rows"></td>
+        <td class="whitespace-nowrap px-6 actual-rows"></td>
+        <td class="whitespace-nowrap px-6 actual-rows"></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
